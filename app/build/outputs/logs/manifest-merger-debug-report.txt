@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:2:1-22:12
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:2:1-23:12
 	xmlns:android
 		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:2:11-69
 	package
@@ -26,48 +26,50 @@ ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src
 		INJECTED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:7:5-15:19
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:7:5-16:19
 	android:label
 		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:7:18-50
 	android:icon
 		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:7:51-87
 activity#br.com.helpdev.MainCamera
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:8:9-14:20
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:8:9-15:20
+	android:screenOrientation
+		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:9:19-55
 	android:label
-		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:9:19-51
+		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:10:19-51
 	android:name
 		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:8:19-44
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:10:13-13:29
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:11:13-14:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:11:17-69
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:12:17-69
 	android:name
-		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:11:25-66
+		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:12:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:12:17-77
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:13:17-77
 	android:name
-		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:12:27-74
+		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:13:27-74
 uses-feature#android.hardware.camera
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:16:5-60
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:17:5-60
 	android:name
-		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:16:19-57
+		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:17:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:17:5-70
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:18:5-70
 	android:name
-		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:17:19-67
+		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:18:19-67
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:18:5-65
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:19:5-65
 	android:name
-		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:18:22-62
+		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:19:22-62
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:19:5-81
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:20:5-81
 	android:name
-		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:19:22-78
+		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:20:22-78
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:20:5-71
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:21:5-71
 	android:name
-		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:20:22-68
+		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:21:22-68
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:21:5-79
+ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:21:22-76
+		ADDED from C:\Users\Lucas Maia\AndroidStudioProjects\exCameraSurfaceView\app\src\main\AndroidManifest.xml:22:22-76

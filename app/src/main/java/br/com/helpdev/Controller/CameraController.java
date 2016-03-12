@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.helpdev.hardware.camera;
+package br.com.helpdev.Controller;
 
 import android.app.Activity;
 import android.hardware.Camera;

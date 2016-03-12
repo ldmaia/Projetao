@@ -1,22 +1,26 @@
-package br.com.helpdev;
+package br.com.helpdev.Activity;
 
 import android.app.Activity;
-import android.content.ContentValues;
-import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.hardware.Camera;
 import android.hardware.Camera.ShutterCallback;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 
-import br.com.helpdev.hardware.camera.CameraController;
-import br.com.helpdev.hardware.camera.DAOdb;
+import br.com.helpdev.Controller.CameraController;
+import br.com.helpdev.DataBase;
+import br.com.helpdev.Entity.Foto;
+import br.com.helpdev.R;
+import br.com.helpdev.Adapter.FotoAdapter;
 
 @SuppressWarnings("ALL")
 public class MainCamera extends Activity implements View.OnClickListener, ShutterCallback, Camera.PictureCallback {
@@ -25,20 +29,26 @@ public class MainCamera extends Activity implements View.OnClickListener, Shutte
     private boolean emCamera;
     private Button botaoCamera;
     private ImageView ImageView;
-    private DataBase db;
+    private ArrayList<Foto> fotos;
+    private ListView listView;
+    private FotoAdapter adapterListView;
+
+    DataBase.FotoDAO db = new DataBase.FotoDAO(this);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
         emCamera = true;
+
+
+        listView = (ListView) findViewById(R.id.listView);
         cameraController = new CameraController(this, R.foto.area_view);
 
         botaoCamera = (Button) findViewById(R.foto.bt_fotografar);
-        //ImageView =(ImageView) findViewById(R.id.imageView);
         botaoCamera.setOnClickListener(this);
-        db = new DataBase(this);
+        //createListView();
+
     }
 
     public void onClick(View view) {
@@ -71,16 +81,17 @@ public class MainCamera extends Activity implements View.OnClickListener, Shutte
      * @param camera
      */
     public void onPictureTaken(byte[] bytes, Camera camera) {
-
-        Bitmap foto = null;
-        foto = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        Bitmap fttirada = null;
+        fttirada = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        Foto foto = new Foto("teste",fttirada);
         //byte[] bb = getBytes(foto);
-        db.addImage(foto);
+        db.inserirImagem(foto);
         //ImageView.setImageBitmap(foto);
         //ImageView.setScaleType(android.widget.ImageView.ScaleType.CENTER_INSIDE);
         Toast.makeText(getApplicationContext(), "sucesso", Toast.LENGTH_SHORT).show();
 
         cameraController.pararVisualizacao();
+        //createListView();
     }
 
 
@@ -95,5 +106,13 @@ public class MainCamera extends Activity implements View.OnClickListener, Shutte
         public static Bitmap getImage(byte[] image) {
             return BitmapFactory.decodeByteArray(image, 0, image.length);
         }
+
+    public void createListView(){
+        fotos = db.carregarFotos();
+        adapterListView = new FotoAdapter(this, fotos);
+        listView.setAdapter(adapterListView);
+        listView.setCacheColorHint(Color.TRANSPARENT);
+
+    }
 
 }
