@@ -5,16 +5,16 @@ import android.graphics.Bitmap;
 /**
  * Created by Lucas on 11/03/2016.
  */
-public class Foto {
+public class Photo {
     private int id;
     private String nome;
     private Bitmap imagem;
 
-    public Foto(){
+    public Photo(){
 
     }
 
-    public Foto(String nome, Bitmap imagem){
+    public Photo(String nome, Bitmap imagem){
         this.nome = nome;
         this.imagem = imagem;
     }

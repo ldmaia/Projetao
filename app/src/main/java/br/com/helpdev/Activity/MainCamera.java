@@ -18,7 +18,8 @@ import java.util.ArrayList;
 
 import br.com.helpdev.Controller.CameraController;
 import br.com.helpdev.DataBase;
-import br.com.helpdev.Entity.Foto;
+import br.com.helpdev.Entity.Photo;
+import br.com.helpdev.PhotoDAO;
 import br.com.helpdev.R;
 import br.com.helpdev.Adapter.FotoAdapter;
 
@@ -29,11 +30,11 @@ public class MainCamera extends Activity implements View.OnClickListener, Shutte
     private boolean emCamera;
     private Button botaoCamera;
     private ImageView ImageView;
-    private ArrayList<Foto> fotos;
     private ListView listView;
     private FotoAdapter adapterListView;
-
-    DataBase.FotoDAO db = new DataBase.FotoDAO(this);
+    ArrayList<Photo> photos = new ArrayList<Photo>();
+    PhotoDAO db = new PhotoDAO(this);
+    private int count = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class MainCamera extends Activity implements View.OnClickListener, Shutte
 
         botaoCamera = (Button) findViewById(R.foto.bt_fotografar);
         botaoCamera.setOnClickListener(this);
-        //createListView();
+        createListView();
 
     }
 
@@ -80,18 +81,29 @@ public class MainCamera extends Activity implements View.OnClickListener, Shutte
      * @param bytes
      * @param camera
      */
-    public void onPictureTaken(byte[] bytes, Camera camera) {
-        Bitmap fttirada = null;
-        fttirada = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-        Foto foto = new Foto("teste",fttirada);
-        //byte[] bb = getBytes(foto);
-        db.inserirImagem(foto);
-        //ImageView.setImageBitmap(foto);
-        //ImageView.setScaleType(android.widget.ImageView.ScaleType.CENTER_INSIDE);
-        Toast.makeText(getApplicationContext(), "sucesso", Toast.LENGTH_SHORT).show();
 
-        cameraController.pararVisualizacao();
-        //createListView();
+    public void onPictureTaken(byte[] bytes, Camera camera) {
+        boolean testa = true;
+        Bitmap fttirada = null;
+
+
+                if (fttirada == null) {
+                    fttirada = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                    Photo photo = new Photo("", fttirada);
+                    db.updateReportPicture(photo.getId() + count, photo.getImagem());
+                    Toast.makeText(getApplicationContext(), "Salvo no banco com sucesso!"+count, Toast.LENGTH_SHORT).show();
+                    count++;
+                    cameraController.pararVisualizacao();
+                    fttirada = null;
+                    createListView();
+                }
+
+
+            //byte[] bb = getBytes(foto);
+            //ImageView.setImageBitmap(foto);
+            //ImageView.setScaleType(android.widget.ImageView.ScaleType.CENTER_INSIDE);
+            //fotos.add(foto);
+            //createListView();
     }
 
 
@@ -108,8 +120,8 @@ public class MainCamera extends Activity implements View.OnClickListener, Shutte
         }
 
     public void createListView(){
-        fotos = db.carregarFotos();
-        adapterListView = new FotoAdapter(this, fotos);
+        photos = db.carregarFotos();
+        adapterListView = new FotoAdapter(this, photos);
         listView.setAdapter(adapterListView);
         listView.setCacheColorHint(Color.TRANSPARENT);
 
